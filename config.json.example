@@ -1,0 +1,6 @@
+{
+  "routerURI": "http://192.168.0.1/getDevices",
+  "watchDevice": "macAddr",
+  "username": "hueUsername",
+  "request": {}
+}
