@@ -1,3 +1,5 @@
+'use strict'
+
 const Axios = require('axios');
 const Hue = require("node-hue-api");
 
@@ -75,11 +77,10 @@ const doCurl = () => {
     ;
 }
 
-const regularCurl = (timeout) => {
-  setTimeout(() => {
+const regularCurl = () => {
+  setInterval(() => {
     doCurl();
-    regularCurl(10000);
-  }, timeout);
+  }, 10000);
 }
 
 const main = () => {
@@ -87,7 +88,7 @@ const main = () => {
     api = new Hue.HueApi(bridges[0].ipaddress, username);
   }
 
-  regularCurl(0);
+  regularCurl();
 };
 
 
